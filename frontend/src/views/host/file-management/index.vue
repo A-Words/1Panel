@@ -279,7 +279,12 @@
                                                             class="box-item"
                                                             effect="dark"
                                                             :content="row.path"
-                                                            placement="top"
+                                                            placement="right-start"
+                                                            :teleported="true"
+                                                            :enterable="false"
+                                                            :show-after="120"
+                                                            :hide-after="120"
+                                                            popper-class="favorite-path-tooltip"
                                                         >
                                                             <span
                                                                 class="table-link text-ellipsis"
@@ -2131,5 +2136,11 @@ onBeforeUnmount(() => {
 }
 :deep(.file-tabs .el-tabs--card .el-tabs__header .el-tabs__nav) {
     border-bottom: none !important;
+}
+
+:deep(.favorite-path-tooltip) {
+    max-width: min(50vw, 520px);
+    white-space: normal;
+    word-break: break-all;
 }
 </style>
